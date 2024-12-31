@@ -1,0 +1,36 @@
+数据位置: 0613/resnet50/tar_adv_img/ 3645
+/home/haiyan/.local/lib/python3.8/site-packages/torchvision/transforms/functional.py:70: UserWarning: TypedStorage is deprecated. It will be removed in the future and UntypedStorage will be the only storage class. This should only matter to you if you are using storages directly.  To access UntypedStorage directly, use tensor.untyped_storage() instead of tensor.storage()
+  img = torch.ByteTensor(torch.ByteStorage.from_buffer(pic.tobytes()))
+判别进度: 0 501
+判别进度: 0 1001
+判别进度: 0 1501
+判别进度: 0 2001
+判别进度: 0 2501
+判别进度: 0 3001
+判别进度: 0 3501
+成功率: 0 3645 0.0
+计算PD防御攻击成功率...
+计算有防御PD50准确率
+数据位置: 0613/resnet50/tar_adv_img/ 3645
+/home/haiyan/.local/lib/python3.8/site-packages/torchvision/transforms/functional.py:70: UserWarning: TypedStorage is deprecated. It will be removed in the future and UntypedStorage will be the only storage class. This should only matter to you if you are using storages directly.  To access UntypedStorage directly, use tensor.untyped_storage() instead of tensor.storage()
+  img = torch.ByteTensor(torch.ByteStorage.from_buffer(pic.tobytes()))
+判别进度: 0 501
+判别进度: 0 1001
+判别进度: 0 1501
+判别进度: 0 2001
+判别进度: 0 2501
+判别进度: 0 3001
+判别进度: 0 3501
+成功率: 0 3645 0.0
+计算有防御PD100准确率
+数据位置: 0613/resnet50/tar_adv_img/ 3645
+/home/haiyan/.local/lib/python3.8/site-packages/torchvision/transforms/functional.py:70: UserWarning: TypedStorage is deprecated. It will be removed in the future and UntypedStorage will be the only storage class. This should only matter to you if you are using storages directly.  To access UntypedStorage directly, use tensor.untyped_storage() instead of tensor.storage()
+  img = torch.ByteTensor(torch.ByteStorage.from_buffer(pic.tobytes()))
+判别进度: 0 501
+判别进度: 0 1001
+判别进度: 0 1501
+判别进度: 0 2001
+判别进度: 0 2501
+判别进度: 1 3001
+判别进度: 1 3501
+成功率: 1 3645 0.00027434842249657066

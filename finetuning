@@ -1,0 +1,65 @@
+import torch
+import torchvision.models as models
+import torch.nn as nn
+
+from imagenet import ImageNet
+# from imagenet import ImageNet, load_pretrained_imagenet_framing
+ 
+class FineTuneResnet50(nn.Module):
+    def __init__(self, num_class=10):
+        super(FineTuneResnet50, self).__init__()
+        self.num_class = num_class
+        resnet50_net = models.resnet50(pretrained=True)
+        # state_dict = torch.load("./models/resnet50-19c8e357.pth")
+        # resnet50_net.load_state_dict(state_dict)
+        self.features = nn.Sequential(*list(resnet50_net.children())[:-1])
+        self.classifier = nn.Linear(2048, self.num_class)
+ 
+    def forward(self, x):
+        x = self.features(x)
+        x = torch.flatten(x, 1)
+        x = self.classifier(x)
+        return x
+ 
+ 
+if __name__ == '__main__':
+
+    device = torch.device("cuda:1" if torch.cuda.is_available() else "cpu")
+    model_ft = models.resnet50(pretrained=True)
+    LR = 0.001
+    EPOCHES = 20
+    BATCHSIZE = 16
+    criterion = nn.CrossEntropyLoss()
+    optimizer = torch.optim.Adam([{'params': model_ft.fc.parameters()}], lr=LR)
+
+    for param in model_ft.parameters():
+        param.requires_grad = False
+
+    num_fc_ftr = model_ft.fc.in_features
+    model_ft.fc = nn.Linear(num_fc_ftr, 1000)
+    model_ft = model_ft.to(device)
+
+    dataset = ImageNet
+    train_loader = dataset.get_data_loaders(data_path='./dataset_train/all_kinds', batch_size=BATCHSIZE)
+
+    # input_test = torch.ones(1, 3, 224, 224).to(device)
+    # resnet50_net = FineTuneResnet50(num_class=1000).to(device)
+
+    for epoch in range(1,EPOCHES):
+        model_ft.train()
+        for batch_idx,data in enumerate(train_loader):
+            x,y = data
+            x = x.to(device)
+            y = y.to(device)
+            optimizer.zero_grad()
+            y_hat = model_ft(x)
+            loss =  criterion(y_hat,y)
+            loss.backward()
+            optimizer.step()
+        print('train epoch: {} \t loss :{:.6f}'.format(epoch,loss.item()))
+    # model_ft.eval()
+
+    torch.save(model_ft.state_dict(), 'finetuning_resnet50' + '.pth')
+    print('save success')
+    # print(resnet50_net)
+    # print(output_test.shape)

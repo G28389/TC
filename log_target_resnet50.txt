@@ -1,0 +1,42 @@
+本次运行参数:
+攻击权重: 2000
+save path: 0613/resnet50/adv_frame_chk/ 0613/resnet50/adv_frame_png/ 0613/resnet50/tar_adv_img/data/
+
+计算无防御攻击成功率...
+计算无防御准确率
+数据位置: 0613/resnet50/tar_adv_img/ 3645
+/home/haiyan/.local/lib/python3.8/site-packages/torchvision/transforms/functional.py:70: UserWarning: TypedStorage is deprecated. It will be removed in the future and UntypedStorage will be the only storage class. This should only matter to you if you are using storages directly.  To access UntypedStorage directly, use tensor.untyped_storage() instead of tensor.storage()
+  img = torch.ByteTensor(torch.ByteStorage.from_buffer(pic.tobytes()))
+判别进度: 492 501
+判别进度: 987 1001
+判别进度: 1484 1501
+判别进度: 1977 2001
+判别进度: 2471 2501
+判别进度: 2964 3001
+判别进度: 3457 3501
+成功率: 3601 3645 0.9879286694101509
+计算PD防御攻击成功率...
+计算有防御PD50准确率
+数据位置: 0613/resnet50/tar_adv_img/ 3645
+/home/haiyan/.local/lib/python3.8/site-packages/torchvision/transforms/functional.py:70: UserWarning: TypedStorage is deprecated. It will be removed in the future and UntypedStorage will be the only storage class. This should only matter to you if you are using storages directly.  To access UntypedStorage directly, use tensor.untyped_storage() instead of tensor.storage()
+  img = torch.ByteTensor(torch.ByteStorage.from_buffer(pic.tobytes()))
+判别进度: 478 501
+判别进度: 961 1001
+判别进度: 1441 1501
+判别进度: 1921 2001
+判别进度: 2403 2501
+判别进度: 2883 3001
+判别进度: 3366 3501
+成功率: 3509 3645 0.9626886145404664
+计算有防御PD100准确率
+数据位置: 0613/resnet50/tar_adv_img/ 3645
+/home/haiyan/.local/lib/python3.8/site-packages/torchvision/transforms/functional.py:70: UserWarning: TypedStorage is deprecated. It will be removed in the future and UntypedStorage will be the only storage class. This should only matter to you if you are using storages directly.  To access UntypedStorage directly, use tensor.untyped_storage() instead of tensor.storage()
+  img = torch.ByteTensor(torch.ByteStorage.from_buffer(pic.tobytes()))
+判别进度: 462 501
+判别进度: 940 1001
+判别进度: 1405 1501
+判别进度: 1864 2001
+判别进度: 2335 2501
+判别进度: 2803 3001
+判别进度: 3275 3501
+成功率: 3413 3645 0.9363511659807956

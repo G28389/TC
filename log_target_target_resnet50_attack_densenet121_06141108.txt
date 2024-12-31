@@ -1,0 +1,44 @@
+本次运行参数:
+攻击权重: 2000
+save path: 0613/resnet50/adv_frame_chk/ 0613/resnet50/adv_frame_png/ 0613/resnet50/tar_adv_img/data/
+
+计算无防御攻击成功率...
+计算无防御准确率
+数据位置: 0613/resnet50/tar_adv_img/ 3645
+/home/haiyan/.local/lib/python3.8/site-packages/torchvision/models/densenet.py:212: UserWarning: nn.init.kaiming_normal is now deprecated in favor of nn.init.kaiming_normal_.
+  nn.init.kaiming_normal(m.weight.data)
+/home/haiyan/.local/lib/python3.8/site-packages/torchvision/transforms/functional.py:70: UserWarning: TypedStorage is deprecated. It will be removed in the future and UntypedStorage will be the only storage class. This should only matter to you if you are using storages directly.  To access UntypedStorage directly, use tensor.untyped_storage() instead of tensor.storage()
+  img = torch.ByteTensor(torch.ByteStorage.from_buffer(pic.tobytes()))
+判别进度: 0 501
+判别进度: 0 1001
+判别进度: 0 1501
+判别进度: 1 2001
+判别进度: 1 2501
+判别进度: 1 3001
+判别进度: 1 3501
+成功率: 1 3645 0.00027434842249657066
+计算PD防御攻击成功率...
+计算有防御PD50准确率
+数据位置: 0613/resnet50/tar_adv_img/ 3645
+/home/haiyan/.local/lib/python3.8/site-packages/torchvision/transforms/functional.py:70: UserWarning: TypedStorage is deprecated. It will be removed in the future and UntypedStorage will be the only storage class. This should only matter to you if you are using storages directly.  To access UntypedStorage directly, use tensor.untyped_storage() instead of tensor.storage()
+  img = torch.ByteTensor(torch.ByteStorage.from_buffer(pic.tobytes()))
+判别进度: 0 501
+判别进度: 0 1001
+判别进度: 0 1501
+判别进度: 1 2001
+判别进度: 1 2501
+判别进度: 1 3001
+判别进度: 1 3501
+成功率: 1 3645 0.00027434842249657066
+计算有防御PD100准确率
+数据位置: 0613/resnet50/tar_adv_img/ 3645
+/home/haiyan/.local/lib/python3.8/site-packages/torchvision/transforms/functional.py:70: UserWarning: TypedStorage is deprecated. It will be removed in the future and UntypedStorage will be the only storage class. This should only matter to you if you are using storages directly.  To access UntypedStorage directly, use tensor.untyped_storage() instead of tensor.storage()
+  img = torch.ByteTensor(torch.ByteStorage.from_buffer(pic.tobytes()))
+判别进度: 0 501
+判别进度: 0 1001
+判别进度: 0 1501
+判别进度: 1 2001
+判别进度: 1 2501
+判别进度: 1 3001
+判别进度: 1 3501
+成功率: 1 3645 0.00027434842249657066
